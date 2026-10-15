@@ -1,12 +1,13 @@
 # Egg Pop Parade — Official Website
 
-A responsive, multi-route game website using the supplied gameplay screenshots. Lightweight vanilla JavaScript frontend, CSS, and a Node.js built-in HTTP server/API. No third-party runtime dependencies.
+A responsive, multi-route game website using the supplied gameplay screenshots. Lightweight vanilla JavaScript frontend, CSS, and a Node.js HTTP server/API.
 
 ## Run locally
 
 Requires Node.js 20+.
 
 ```bash
+npm install
 npm start
 ```
 
@@ -16,7 +17,11 @@ Open http://localhost:4173. The server serves the frontend and exposes optional 
 - `GET /api/worlds`
 - `GET /api/features`
 - `GET /api/faq`
-- `POST /api/contact` (returns 501 until delivery is configured)
+- `POST /api/contact` (sends messages through the configured SMTP server)
+
+## Contact email setup
+
+Copy `.env.example` to `.env` and fill in the SMTP server, credentials, sender, and destination inbox. Keep `.env` private; it is excluded from version control. For production, configure the same values as environment variables in the hosting platform. SMTP providers may require an app password or a verified sender address.
 
 ## Routes
 
@@ -32,13 +37,13 @@ Edit `config.js` only for game links, support email, socials, analytics toggle, 
 
 ## Contact and legal status
 
-The contact form validates in the browser but clearly reports that delivery is not connected. Terms and Privacy pages are drafts with explicit placeholders. Complete and obtain appropriate review before publishing. Do not treat these templates as legal advice.
+Terms and Privacy pages are drafts with explicit placeholders. Complete and obtain appropriate review before publishing. Do not treat these templates as legal advice.
 
 ## Production checklist
 
 - Set `CONFIG.CANONICAL_URL` and update canonical/OG URLs in `index.html`.
 - Add actual world-specific art and favicon/social preview assets.
 - Configure real support email and social profile URLs.
-- Connect contact submission to a secured backend/email provider before claiming delivery.
+- Configure SMTP settings and verify contact email delivery before publishing.
 - Review legal copy and fill developer/company/jurisdiction/effective-date placeholders.
 - Run accessibility, browser, and deployment QA in the target hosting environment.

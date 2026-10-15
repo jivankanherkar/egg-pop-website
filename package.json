@@ -1,0 +1,16 @@
+{
+    "name": "egg-pop-parade-official-site",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "start": "node backend/server.mjs"
+    },
+    "engines": {
+        "node": ">=20"
+    },
+    "dependencies": {
+        "dotenv": "^18.0.7",
+        "nodemailer": "^10.1.0"
+    }
+}
